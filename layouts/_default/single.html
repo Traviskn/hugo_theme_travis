@@ -1,0 +1,28 @@
+{{ partial "header.html" . }}
+    <main role="main" >
+      <div class="container">
+        <h1>
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        </h1>
+
+        <article>
+          {{ .Content }}
+        </article>
+
+        {{ if ne .Type "page"}}
+          {{ partial "date.html" . }}
+        {{ end }}
+
+        {{ with .Params.tags }}
+          <section class="tags">
+            <span class="tags-label">Tags:</span>
+            {{ range . }}
+              <a href="{{ $.Site.BaseURL}}tags/{{ . }}" class="tag">
+                {{ . }}
+              </a>
+            {{ end }}
+          </section>
+        {{ end }}
+      </div><!-- container -->
+    </main>
+{{ partial "footer.html" . }}

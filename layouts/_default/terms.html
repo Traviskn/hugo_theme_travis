@@ -1,0 +1,13 @@
+{{ partial "header.html" . }}
+  <main role="main">
+    <div class="container">
+      <h1>{{ .Title }}</h1>
+
+      {{ range $key, $value := .Data.Terms }}
+        <a href="/{{ $.Data.Plural }}/{{ $key | urlize }}/" class="{{ $.Data.Singular }}">
+          {{ $key }}
+        </a>
+      {{ end }}
+    </div>
+  </main>
+{{ partial "footer.html" . }}

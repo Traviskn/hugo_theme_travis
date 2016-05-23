@@ -1,0 +1,15 @@
+<article class="post">
+    <h2>
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+    </h2>
+
+    <div class="entry">
+      <p>
+        {{ .Summary }}
+      </p>
+
+      {{ partial "date.html" . }}
+    </div>
+
+    <a href="{{ .Permalink }}" class="read-more">Read More</a>
+</article>

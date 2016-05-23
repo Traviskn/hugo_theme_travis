@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    {{ .Hugo.Generator }}
+    <meta name="author" content="Travis Nuttall" />
+    <meta name="description" content="The personal blog of Travis Nuttall"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    <title>Travis Nuttall's Blog</title>
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ .Site.BaseURL }}/index.xml">
+  </head>
+
+  <body>
+    <header>
+      <div class="clearfix container">
+        <a href="/" class="site-avatar">
+          <img
+            src="https://avatars2.githubusercontent.com/u/3917158?v=2&s=140"
+            alt="Profile Image" />
+        </a>
+
+        <div class="site-info">
+            <h1 class="site-name">
+              <a href="/">Travis Nuttall</a>
+            </h1>
+
+          <p class="site-description">Coding, Japanese, and Other Geeky Things</p>
+        </div>
+
+        <nav class="header-nav">
+          <a href="/">Blog</a>
+          {{ range .Site.Pages }}
+            {{ if eq .Type "page" }}
+              <a href="{{ .Permalink }}">{{ .Title }}</a>
+            {{ end }}
+          {{ end }}
+        </nav>
+      </div><!-- clearfix container -->
+    </header>

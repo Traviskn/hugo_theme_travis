@@ -1,0 +1,15 @@
+{{ partial "header.html" . }}
+
+    <main role="main" >
+      <div class="container">
+        {{ range (.Paginate .Data.Pages).Pages  }}
+          {{ if eq .Type "post"}}
+            {{ partial "post_list_item.html" . }}
+          {{ end }}
+        {{ end }}
+
+        {{ partial "pagination.html" . }}
+      </div><!-- container -->
+    </main>
+
+{{ partial "footer.html" . }}
