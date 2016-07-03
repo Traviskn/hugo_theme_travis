@@ -111,7 +111,7 @@ a {
   color: #4183C4;
   text-decoration: none;
   cursor: pointer;
-  transition: all .3s ease-in-out;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
 }
 a:hover, a:active {
   color: #E60000;
