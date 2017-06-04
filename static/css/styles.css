@@ -111,9 +111,9 @@ a {
   color: #4183C4;
   text-decoration: none;
   cursor: pointer;
-  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+  transition: color .3s ease-in-out;
 }
-a:hover, a:active {
+a:hover, a:focus, a:active {
   color: #E60000;
 }
 
@@ -192,7 +192,7 @@ header a {
   color: #fff;
   padding-left: 1px;
 }
-header a:hover, header a:active {
+header a:hover, header a:active, header a:focus {
   color: #FA0000;
 }
 
@@ -307,7 +307,9 @@ main {
 .post > h2 > a {
   color: #2c3e50;
 }
-.post > h2 > a:hover {
+.post > h2 > a:hover,
+.post > h2 > a:active,
+.post > h2 > a:focus {
   color: #E60000;
 }
 
@@ -330,9 +332,11 @@ main {
   background: #2c3e50;
   border: solid 2px #2c3e50;
   border-radius: 300px;
-  transition: all 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
 }
-.post .read-more:hover {
+.post .read-more:hover,
+.post .read-more:focus,
+.post .read-more:active {
   color: #E60000;
   background: #fff;
 }
@@ -356,6 +360,11 @@ main {
   border-radius: 5px;
   font-size: 0.85em;
   font-weight: lighter;
+  transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.tag:hover, .tag:focus, .tag:active {
+  border-color: #E60000;
+  color: #E60000;
 }
 
 
@@ -382,13 +391,10 @@ footer {
   font-size: 20px;
   color: #fff;
   background: 0 0;
-  transition: all .3s ease-in-out;
+  transition: border 0.3s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
-.btn-outline:hover,
-.btn-outline:focus,
-.btn-outline:active,
-.btn-outline.active {
+.btn-outline:hover, .btn-outline:focus, .btn-outline:active {
   border: solid 2px #fff;
   color: #E60000;
   background: #fff;

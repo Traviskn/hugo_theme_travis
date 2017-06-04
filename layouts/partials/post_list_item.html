@@ -11,5 +11,7 @@
       {{ partial "date.html" . }}
     </div>
 
-    <a href="{{ .Permalink }}" class="read-more">Read More</a>
+    <a href="{{ .Permalink }}" class="read-more" aria-label="Read more about {{ .Title }}">
+      Read More
+    </a>
 </article>

@@ -1,0 +1,11 @@
+{{ with .Params.tags }}
+  <aside class="tags">
+    <span class="tags-label">Tags:</span>
+    {{ range . }}
+      <a href="{{ $.Site.BaseURL }}tags/{{ . }}" class="tag">
+        {{ . }}
+      </a>
+    {{ end }}
+  </aside>
+{{ end }}
+

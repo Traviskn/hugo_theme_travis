@@ -5,7 +5,7 @@
     {{ .Hugo.Generator }}
     <meta name="author" content="Travis Nuttall" />
     <meta name="description" content="The personal blog of Travis Nuttall"/>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
     <title>Travis Nuttall's Blog</title>
 
@@ -32,12 +32,12 @@
               <a href="/">Travis Nuttall</a>
             </h1>
 
-          <p class="site-description">Coding, Japanese, and Other Geeky Things</p>
+          <p class="site-description">Husband, Coder, Japan Enthusiast, Aspiring Entrepreneur</p>
         </div>
 
         <nav class="header-nav">
           <a href="/">Blog</a>
-          {{ range .Site.Pages }}
+          {{ range .Site.RegularPages }}
             {{ if eq .Type "page" }}
               <a href="{{ .Permalink }}">{{ .Title }}</a>
             {{ end }}

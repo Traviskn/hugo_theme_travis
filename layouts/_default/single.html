@@ -9,20 +9,15 @@
           {{ .Content }}
         </article>
 
-        {{ if ne .Type "page"}}
+        {{ if eq .Type "post"}}
           {{ partial "date.html" . }}
         {{ end }}
 
-        {{ with .Params.tags }}
-          <section class="tags">
-            <span class="tags-label">Tags:</span>
-            {{ range . }}
-              <a href="{{ $.Site.BaseURL}}tags/{{ . }}" class="tag">
-                {{ . }}
-              </a>
-            {{ end }}
-          </section>
+        {{ if .Params.series }}
+          {{ partial "series.html" . }}
         {{ end }}
+
+        {{ partial "tags.html" . }}
       </div><!-- container -->
     </main>
 {{ partial "footer.html" . }}
