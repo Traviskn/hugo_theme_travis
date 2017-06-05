@@ -1,23 +1,48 @@
 {{ partial "header.html" . }}
-    <main role="main" >
+    <main role="main">
       <div class="container">
-        <h1>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </h1>
+        <header>
+          <h1>
+            {{ .Title }}
+          </h1>
+
+          {{ if eq .Type "post"}}
+            <div class="clearfix">
+              <div class="header-date">
+                {{ partial "date.html" . }}
+              </div>
+
+              <div class="header-tags">
+                {{ partial "tags.html" . }}
+              </div>
+            </div>
+
+            {{ if .Params.series }}
+              <aside>
+                {{ $name := index .Params.series 0 }}
+                {{ $slug := $name | urlize }}
+                <p>This is a post in the
+                  <a href="{{ $.Site.BaseURL }}/series/{{ $slug }}" id="series">
+                    <b>{{$name}}</b>
+                  </a>
+                  series.
+                </p>
+              </aside>
+            {{ end }}
+          </header>
+
+          <hr/>
+        {{ end }}
 
         <article>
           {{ .Content }}
         </article>
-
-        {{ if eq .Type "post"}}
-          {{ partial "date.html" . }}
-        {{ end }}
 
         {{ if .Params.series }}
           {{ partial "series.html" . }}
         {{ end }}
 
         {{ partial "tags.html" . }}
-      </div><!-- container -->
+      </div>
     </main>
 {{ partial "footer.html" . }}

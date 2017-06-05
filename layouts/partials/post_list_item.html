@@ -1,17 +1,19 @@
 <article class="post">
-    <h2>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </h2>
+  <h2>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </h2>
 
-    <div class="entry">
-      <p>
-        {{ .Summary }}
-      </p>
+  {{ partial "date.html" . }}
 
-      {{ partial "date.html" . }}
-    </div>
+  <div class="entry">
+    <p>
+      {{ .Summary }}
+    </p>
+  </div>
 
-    <a href="{{ .Permalink }}" class="read-more" aria-label="Read more about {{ .Title }}">
-      Read More
-    </a>
+  <a href="{{ .Permalink }}" class="read-more" aria-label="Read more about {{ .Title }}">
+    Read More
+  </a>
+
+  <hr/>
 </article>

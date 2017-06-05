@@ -1,20 +1,18 @@
 {{ $name := index .Params.series 0 }}
+{{ $slug := $name | urlize }}
 <hr/>
 <aside>
   <p>
     This is a post in the
-    <a href="{{ $.Site.BaseURL }}/series/{{ $name | urlize }}" id="series">
+    <a href="{{ $.Site.BaseURL }}/series/{{ $slug }}" id="series">
       <b>{{$name}}</b>
     </a>
-    series.
-    <br/>
-    Other posts in this series:
+    series. Other posts in this series:
   </p>
 
-  {{ $name := $name | urlize }}
-  {{ $series := index .Site.Taxonomies.series $name }}
+  {{ $series := index .Site.Taxonomies.series $slug}}
   <ul class="series">
-  {{ range $series.Pages }}
+  {{ range ($series.Pages).Reverse }}
     <li>
       <a href="{{ .Permalink }}">{{ .LinkTitle }}</a>
     </li>

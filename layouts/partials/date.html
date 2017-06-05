@@ -1,3 +1,6 @@
-<section class="date">
-  Written on {{ .Date.Format "Jan 2, 2006" }}
-</section>
+<p class="date">
+  Written on
+  <time datetime="{{ .Date }}">
+    {{ .Date.Format "Jan 2, 2006" }}
+  </time>
+</p>
