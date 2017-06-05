@@ -1,3 +1,3 @@
 # Travis Hugo Theme
 
-Custom theme for my [Hugo](http://gohugo.io/) blog.
+Custom theme for my [personal blog](http://traviskn.github.io/), built with [Hugo](http://gohugo.io/).
